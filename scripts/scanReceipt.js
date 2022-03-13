@@ -43,9 +43,9 @@ ready(function () {
             if ('Words' in line) {
                 // Get each word in line
                 line.Words.forEach(currentWord => {
+                    let word = currentWord.WordText;
                     // Tests if a given word contains only digits
                     let isNum = /^\d+$/.test(word)
-                    let word = currentWord.WordText;
 
                     if (word.length == UPC_LENGTH && isNum) {
                         // Append to UPC array
