@@ -34,6 +34,10 @@
   <!-- Other libraries and styles of your own -->
   <!-------------------------------------------->
   <link type="text/css" href="./styles/style.css">
+  
+<script type="text/javascript">
+
+</script>
 </head>
 
 <body>
@@ -54,16 +58,15 @@
       }
     </style>
     
-    <div id="intro" class="bg-image p-5 text-center shadow-1-strong rounded text-white" 
+    <div id="intro" class="bg-image p-5 text-center" 
     style="background-image: url('https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg');
-    max-width: 100%; height: 100vh;">
-   
-    
-    <div style="height: 170px; width: 600px;margin-left: 25%; background-color: aliceblue;">
-      <h1 class="mb-3 h2" style="margin-top: 40px; color: black;">Hello, <span id="name-goes-here"></span></h1>
-      <p style="color: black; margin-bottom: 10px; margin-top: 50px;">Recent Recall: </p>
-      <p style="color: black; margin-bottom: 100px;"><span id="recall-goes-here">...</span></p>
-    </div>
+    max-width: 100%; height: 90vh;">
+
+      <div class="container col-10 col-lg-8 mx-auto p-2 justify-content-center shadow-lg rounded" style="background-color: aliceblue;">
+        <h1 class="my-3 h2">Hello, <span id="name-goes-here"></span></h1>
+        <p class="mt-1">Recent Recall: </p>
+        <p class="mb-3"><span id="recall-goes-here">...</span></p>
+      </div>
 
       <div class="container" style=" margin-top: 100px; margin-bottom: 110px;">
         <div class="row">
@@ -71,8 +74,8 @@
             <a class="btn btn-success btn-lg" href="./scan.html" role="button">Scan Receipt</a>
           </div>
         </div>
-        
       </div>
+
     </div>
 
 
@@ -90,7 +93,8 @@
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/firebaseAPI_ByteBreak.js"></script>
   <script src="/scripts/main.js"></script>
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="./scripts/emailjs.js"></script>
 </body>
 
 </html>
