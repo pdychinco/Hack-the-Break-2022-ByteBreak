@@ -53,20 +53,34 @@
   max-width: 100%;
   height: 80vh;"
 >
-  <h1 class="mb-3 h2"
-  style="margin-top: 20px;
-  color: black;">
-  Hello <span id="user">UserName</span></h1>
-  <p style="color: black; margin-bottom: 150px;">Recall of the day: <span id="recall">...</span></p>
+
+<h3 style="color: black;">To Scan Receipt:</h3>
 
   <div class="container"
-style="margin-bottom: 110px;">
+        style="margin-bottom: 110px;
+        margin-top: 35px;">
     <div class="row">
       <div class="col text-center">
-        <a class="btn btn-success btn-lg" href="./scan.html" role="button">Scan Receipt</a>
+        <a class="btn btn-success btn-lg" href="./scan.html" role="button">Open Camera</a>
       </div>
     </div>
   </div>
+
+  <h3 style="color: black;">Upload from Camera Roll:</h3>
+  <div id="file-upload-container">
+    <div class="container"
+    style="margin-bottom: 70px;
+    margin-top: 35px;">
+  <div class="row">
+  <div class="col text-center">
+      <input class="btn btn-success btn-sm" type="file" name="fileUpload" id="file-upload" multiple="single" />
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
 </div>
 
 
@@ -85,4 +99,3 @@ style="margin-bottom: 110px;">
 </body>
 
 </html>
-
