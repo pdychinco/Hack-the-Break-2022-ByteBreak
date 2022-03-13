@@ -6,3 +6,9 @@ h1 {
     display: block;
     text-align: center;
 }
+
+#intro {
+    background-image: url('https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
