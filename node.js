@@ -47,7 +47,6 @@ app.get("/recall", function (req, res) {
         // just send JSON message
         res.send({ status: "fail", msg: "Wrong format!" });
     }
-
 });
 
 // for page not found (i.e., 404)
