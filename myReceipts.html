@@ -51,6 +51,7 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+
   </style>
 
   <div class="nav-scroller bg-body shadow-sm">
@@ -71,9 +72,8 @@
 <div id="content">
   <div class="ajax_content">
     <p>Item #1</p>
-    <input id="recallHTML" type="button" value="Open"/>
-    <input class="clear" type="button" value="Close"/>
-    <div class="ajax-stuff" id="recall-html"></div>
+    <input id="recallHTML" type="button" value="Open/Close" onclick="toggle('recallImg1')"/>
+    <div class="ajax-stuff" id="recall-html"><img width="10%"; id="recallImg1" src="./public/images/receipt.png"></img></div>
   </div>
   </div>
 
@@ -122,10 +122,13 @@
   <!---------------------------------------------->
   <!--- Your own JavaScript functions go here ---->
   <!---------------------------------------------->
+  <script src="./node.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/firebaseAPI_ByteBreak.js"></script>
   <script type="module" src="scripts/rss2json.js"></script>
   <script src="js/client.js"></script>
+  <script src="./scripts/displayreceipt.js"></script>
+  
   
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="./scripts/emailjs.js"></script>
