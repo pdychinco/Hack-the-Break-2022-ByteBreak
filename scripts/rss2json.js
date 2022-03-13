@@ -1,6 +1,8 @@
+import { API_KEYS } from "./apikey.js";
+
 var param = {
   "rss_url": 'https://recalls-rappels.canada.ca/en/feed/cfia-alerts-recalls',
-  "api_key": 'ocxzfck22k5yq4crbesblxvvbibmfu6lrzqyy2zu', // put your api key here
+  "api_key": API_KEYS["rss"], // put your api key here
   "order_dir": 'asc'
 }
 
@@ -17,7 +19,7 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=' + param["rss_url"]+ "&api_
 async function writeData(data) {
   var dataRef = db.collection("recallList");
   
-  for(i=0;i<data.length;i++) {
+  for(let i=0;i<data.length;i++) {
     let recentDate = await latestDate();
     let pubDay = data[i]["pubDate"].split(" ")[0].split("-")[2];
     if(pubDay > recentDate) {
@@ -45,24 +47,7 @@ async function latestDate() {
     return newestDay;
 }
 
-function renderRecallList() {
-  db.collection("recallList").get()
-  .then(snap => {
-    snap.forEach(doc => {
-      console.log(doc.data().title);
-      var title = doc.data().title;   // get value of the "title" key
-      var pubDate = doc.data().pubDate;   // get value of the "pubDate" key
-      var url = doc.data().url;// get value of the "url" key
-      var content = doc.data().content;// get value of the "context" key
-      
-      //update title and text and image
-      document.querySelector('#title').innerHTML = title;
-      document.querySelector('#date').innerHTML = pubDate;
-      document.querySelector('#url').href = url;
-      document.querySelector('#content').innerHTML = content;
-    })
-  });
-}
+
 function renderRecallList() {
   let cardTemplate = document.getElementById("cardTemplate");
   db.collection("recallList").get()
@@ -82,7 +67,6 @@ function renderRecallList() {
 
         //attach to gallery
         document.getElementById("recallList-go-here").appendChild(newcard);
-        i++;
     })
   });
 }

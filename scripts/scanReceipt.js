@@ -1,6 +1,8 @@
+import { API_KEYS } from "./apikey.js";
+// const API_KEYS = require("./apikey");
 var receiptBase64;
 const ocrEndpointURL = "https://api.ocr.space/parse/image";
-const API_KEY = "K88104723688957";
+
 
 ready(function () {
     console.log("Receipt Scanning script loaded.");
@@ -16,7 +18,7 @@ ready(function () {
         xhr.open("POST", url);
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.setRequestHeader('apikey', API_KEY);
+        xhr.setRequestHeader('apikey', API_KEYS["ocr"]);
         xhr.send(params);
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
