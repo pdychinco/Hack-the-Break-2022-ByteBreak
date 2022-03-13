@@ -40,11 +40,26 @@
   <!---------------------------------------------->
   <!---------- Navigation Bar goes here ---------->
   <!---------------------------------------------->
-
-  <nav id="navbarPlaceholder"></nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../scan.html">Do You Recall?</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+          <a class="nav-link " href="../myReceipts.html">Account</a>
+          <a class="nav-link" href="#">Settings</a>
+          <a class="nav-link" href="#">Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <!---------------------------------------------->
   <!-------- Welcome Jumbotron goes here --------->
+  <!---------------------------------------------->
   <!---------------------------------------------->
   <style>
     #intro {
@@ -76,7 +91,7 @@
     <div class="ajax-stuff" id="recall-html"></div>
   </div>
   </div>
-
+<!--not using these ones for demo-->
   <div id="content1">
     <div class="ajax_content">
       <p class="mt-2">Item #2</p>
@@ -106,17 +121,81 @@
         </div>
 
 
-
-
 </div>
-
-
 
 
   <!---------------------------------------------->
   <!-------------- Footer goes here -------------->
   <!---------------------------------------------->
-  <nav id="footerPlaceholder"></nav>
+  <style>
+    a {
+      text-decoration: none;
+  
+    }
+  </style>
+  
+  <footer class="bg-light text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+       
+   <!--Grid column-->
+   <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+    <h5 class="text-uppercase">About Us</h5>
+  
+    <p>
+      We are team ByteBreak and our mission is to notify users if an item
+      that they have bought has been recalled as soon as possible to prevent
+      consumption of food that poses a risk to their health.
+    </p>
+  </div>
+  <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Team Members</h5>
+  
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-dark">Princeton Dychinco</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Dakaro Mueller</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Izabelle Datayan</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Betty Nguyen</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Quick Link</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://recalls-rappels.canada.ca/en" class="text-dark">Canada Recall Website</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright
+      <a class="text-dark" style="text-decoration: none"><b>ByteBreak</b></a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
   <!---------------------------------------------->
   <!--- Your own JavaScript functions go here ---->
