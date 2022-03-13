@@ -1,47 +1,75 @@
 var param = {
   "rss_url": 'https://recalls-rappels.canada.ca/en/feed/cfia-alerts-recalls',
-  "api_key": '' // put your api key here
+  "api_key": 'ocxzfck22k5yq4crbesblxvvbibmfu6lrzqyy2zu', // put your api key here
+  "order_dir": 'asc'
 }
 
-fetch('https://api.rss2json.com/v1/api.json?rss_url=' + param["rss_url"]+ "&api_key=" + param["api_key"])
+var currentDate = new Date();
+var year = currentDate.getFullYear();
+var month = currentDate.getMonth();
+var day = currentDate.getDate();
+
+
+fetch('https://api.rss2json.com/v1/api.json?rss_url=' + param["rss_url"]+ "&api_key=" + param["api_key"]+"&order_dir=" +param["order_dir"])
   .then(response => response.json())
   .then(data => {
     console.log(data.items);
-      // writeData(data.items);
-      
+      writeData(data.items);
     });
 
 // currently keeps saving duplicates
-function writeData(data) {
-  var dataRef = db.collection("data");
+async function writeData(data) {
+  var dataRef = db.collection("recallList");
   
   for(i=0;i<data.length;i++) {
-    if(data[i]["guid"] > largestIdCheck()) {
+    let recentDate = await latestDate();
+    let pubDay = data[i]["pubDate"].split(" ")[0].split("-")[2];
+    if(pubDay > recentDate) {
       dataRef.add({
         id: data[i]["guid"],
         title: data[i]["title"],
         pubDate: data[i]["pubDate"],
+        context: data[i]["context"],
         url: data[i]["link"]
       });
-    }else {
-      continue;
     }
   }
 }
 
-function largestIdCheck() {
-  let largestId = 0;
-  db.collection("data").get()
+async function latestDate() {
+  let newestDay = 0;
+  await db.collection("recallList").get()
     .then(snap => {
-      snap.forEach(doc => {
-        if(doc.data().id > largestId) {
-          largestId = doc.data().id;
+      snap.docs.forEach(doc => {
+        if(doc.data().pubDate.split(" ")[0].split("-")[2] > newestDay) {
+          newestDay = doc.data().pubDate.split(" ")[0].split("-")[2];
         }
       })
     })
-    return largestId;
+    return newestDay;
 }
 
+function renderRecallList() {
+  db.collection("recallList").get()
+  .then(snap => {
+    snap.forEach(doc => {
+  var title = doc.data().title;   // get value of the "title" key
+  var pubDate = doc.data().pubDate;   // get value of the "pubDate" key
+  var url = doc.data().url;// get value of the "url" key
+  var context = doc.data().context;// get value of the "context" key
+  
+  
+  //update title and text and image
+  document.querySelector('#title').innerHTML = title;
+  document.querySelector('#date').innerHTML = pubDate;
+  document.querySelector('#url').href = url;
+  document.querySelector('#context').innerHTML = context;
+  
+})
+  });
+}
+
+renderRecallList();
 // const info = {
 //   id : "id",
 //   title : "title",
@@ -75,4 +103,3 @@ function largestIdCheck() {
 //     return this.url;
 //   }
 // }
-
