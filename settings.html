@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Hack The Break 2022</title>
+  <meta name="Template" content="Item Recall Project">
+
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <link type="text/css" href="./styles/style.css">
+  
+<script type="text/javascript">
+
+</script>
+</head>
+
+<body>
+  <!---------------------------------------------->
+  <!---------- Navigation Bar goes here ---------->
+  <!---------------------------------------------->
+  <nav id="navbarPlaceholder"></nav>
+
+  <!---------------------------------------------->
+  <!-------- Welcome Jumbotron goes here --------->
+  <!---------------------------------------------->
+  <header>
+    <style>
+      #intro {
+        background-image: url('https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; 
+      }
+    </style>
+    
+    <div class="container col-10 col-lg-8 mx-auto p-2 justify-content-center rounded" style="text-align: center;">
+        <h1 class="my-3 h2">Account Settings</h1>
+        <br>
+        <p><b>Name: </b>John Smith</p>
+        <br>
+        <p><b>Phone Number:</b> 123-456-7890</p>
+        <br>
+        <p><b>Email:</b> johnsmith@email.com</p>
+        <br>
+        <p><b>Notification Preference:</b></p>
+        <form>
+            <input type="checkbox" id="text" name="vehicle1" value="Bike">
+            <label for="vehicle1"> Text</label><br>
+            <input type="checkbox" id="email" name="vehicle2" value="Car">
+            <label for="vehicle2"> Email</label><br><br>
+            <input id="submit" type="submit" value="Submit">
+          </form>
+          <br>
+          <br>
+      </div>
+
+  </header>
+
+  <!---------------------------------------------->
+  <!-------------- Footer goes here -------------->
+  <!---------------------------------------------->
+  <nav id="footerPlaceholder"></nav>
+
+  <!---------------------------------------------->
+  <!--- Your own JavaScript functions go here ---->
+  <!---------------------------------------------->
+  <script type="module" src="./scripts/rss2json.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/firebaseAPI_ByteBreak.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="./scripts/emailjs.js"></script>
+  <script src="./scripts/accountsettings.js"></script>
+</body>
+
+</html>
