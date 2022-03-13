@@ -40,58 +40,26 @@
   <!---------------------------------------------->
   <!---------- Navigation Bar goes here ---------->
   <!---------------------------------------------->
-
   <nav id="navbarPlaceholder"></nav>
 
   <!---------------------------------------------->
   <!-------- Welcome Jumbotron goes here --------->
   <!---------------------------------------------->
-  
-  <header>
-    <style>
-      #intro {
-        background-image: url('https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-    </style>
 
-  <div class="nav-scroller bg-body shadow-sm">
-    <nav class="nav nav-underline" aria-label="Secondary navigation">
-      <a class="nav-link active" aria-current="page" href="./myReceipts.html">My Receipts</a>
-      <a class="nav-link" href="./myRecalls.html">My Recalls</a>
-    </nav>
+  <div id="recallList-go-here">
+    <template id="cardTemplate">
+      <div class="col-sm-6">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title" id="title">Special title treatment</h5>
+                  <p class="card-text" id="date">Date</p>
+                  <p class="card-text" id="content">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary" id="url">Go somewhere</a>
+              </div>
+          </div>
+      </div>
+    </template>
   </div>
-  
-
-  <div
-  id="intro"
-  class="bg-image p-5 text-center shadow-1-strong rounded text-white"
-    style="background-image: url('https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg');
-  max-width: 100%;
-  height: 90vh;"
->
-<div id="recallList-go-here">
-  <template id="cardTemplate">
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title text-dark" id="title">Special title treatment</h5>
-                <p class="card-text text-dark" id="date">Date</p>
-                <p class="card-text text-dark" id="content">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary" id="url">Gov of Canada Recall Link</a>
-            </div>
-        </div>
-    </div>
-  </template>
-</div>
-
-
-
-
-
-</div>
-
 
 
 
@@ -105,7 +73,10 @@
   <!---------------------------------------------->
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/firebaseAPI_ByteBreak.js"></script>
-  <script type="module" src="./scripts/rss2json.js"></script>
+  <script src="./scripts/rss2json.js"></script>
+  
+  
 </body>
 
 </html>
+
