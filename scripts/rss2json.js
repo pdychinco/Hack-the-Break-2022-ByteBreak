@@ -4,10 +4,6 @@ var param = {
   "order_dir": 'asc'
 }
 
-var currentDate = new Date();
-var year = currentDate.getFullYear();
-var month = currentDate.getMonth();
-var day = currentDate.getDate();
 
 
 fetch('https://api.rss2json.com/v1/api.json?rss_url=' + param["rss_url"]+ "&api_key=" + param["api_key"]+"&order_dir=" +param["order_dir"])
@@ -28,8 +24,8 @@ async function writeData(data) {
       dataRef.add({
         id: data[i]["guid"],
         title: data[i]["title"],
-        pubDate: data[i]["pubDate"],
-        context: data[i]["context"],
+        pubDate: data[i]["pubDate"].split(" ")[0],
+        content: data[i]["content"],
         url: data[i]["link"]
       });
     }
@@ -53,19 +49,41 @@ function renderRecallList() {
   db.collection("recallList").get()
   .then(snap => {
     snap.forEach(doc => {
-  var title = doc.data().title;   // get value of the "title" key
-  var pubDate = doc.data().pubDate;   // get value of the "pubDate" key
-  var url = doc.data().url;// get value of the "url" key
-  var context = doc.data().context;// get value of the "context" key
-  
-  
-  //update title and text and image
-  document.querySelector('#title').innerHTML = title;
-  document.querySelector('#date').innerHTML = pubDate;
-  document.querySelector('#url').href = url;
-  document.querySelector('#context').innerHTML = context;
-  
-})
+      console.log(doc.data().title);
+      var title = doc.data().title;   // get value of the "title" key
+      var pubDate = doc.data().pubDate;   // get value of the "pubDate" key
+      var url = doc.data().url;// get value of the "url" key
+      var content = doc.data().content;// get value of the "context" key
+      
+      //update title and text and image
+      document.querySelector('#title').innerHTML = title;
+      document.querySelector('#date').innerHTML = pubDate;
+      document.querySelector('#url').href = url;
+      document.querySelector('#content').innerHTML = content;
+    })
+  });
+}
+function renderRecallList() {
+  let cardTemplate = document.getElementById("cardTemplate");
+  db.collection("recallList").get()
+  .then(snap => {
+      snap.forEach(doc => { //iterate thru each doc
+        var title = doc.data().title;   // get value of the "title" key
+        var pubDate = doc.data().pubDate;   // get value of the "pubDate" key
+        var url = doc.data().url;// get value of the "url" key
+        var content = doc.data().content;// get value of the "context" key
+        let newcard = cardTemplate.content.cloneNode(true);
+
+        //update title and date and url and content
+        newcard.querySelector('#title').innerHTML = title;
+        newcard.querySelector('#date').innerHTML = pubDate;
+        newcard.querySelector('#url').href = url;
+        newcard.querySelector('#content').innerHTML = content;
+
+        //attach to gallery
+        document.getElementById("recallList-go-here").appendChild(newcard);
+        i++;
+    })
   });
 }
 

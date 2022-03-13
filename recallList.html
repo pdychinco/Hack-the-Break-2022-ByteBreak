@@ -46,7 +46,20 @@
   <!-------- Welcome Jumbotron goes here --------->
   <!---------------------------------------------->
 
-  <div id="cardPlaceholder"></div>
+  <div id="recallList-go-here">
+    <template id="cardTemplate">
+      <div class="col-sm-6">
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title" id="title">Special title treatment</h5>
+                  <p class="card-text" id="date">Date</p>
+                  <p class="card-text" id="content">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary" id="url">Go somewhere</a>
+              </div>
+          </div>
+      </div>
+    </template>
+  </div>
 
 
 
@@ -59,9 +72,9 @@
   <!--- Your own JavaScript functions go here ---->
   <!---------------------------------------------->
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/rss2json.js"></script>
- 
   <script src="./scripts/firebaseAPI_ByteBreak.js"></script>
+  <script src="./scripts/rss2json.js"></script>
+  
   
 </body>
 
